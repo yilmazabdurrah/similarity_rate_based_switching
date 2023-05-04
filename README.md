@@ -11,5 +11,5 @@ _2) Decision mechanism_
 
 ![](https://github.com/yilmazabdurrah/similarity_rate_based_switching/blob/master/figures/DecisionMechanismSIMULINK_v02.png?raw=true)
 
-These blocks can be directly used as ROS nodes or employedc to generate standalone ROS nodes from SIMULINK.
+These blocks can be directly used as ROS nodes or employed to generate standalone ROS nodes from SIMULINK.
 
