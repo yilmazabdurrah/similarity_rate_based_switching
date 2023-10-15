@@ -29,7 +29,7 @@ _4) Coarse localization for delivery stage_
 
 Please refer to the following manuscript for further details and cite it for academic works
 
-```bash
+```
 @article{yilmaz202_robotica,
   title={A Multi-stage Localization Framework for Accurate and Precise Docking of Autonomous Mobile Robots (AMRs)},
   author={Yilmaz, Abdurrahman and Temeltas, Hakan},
