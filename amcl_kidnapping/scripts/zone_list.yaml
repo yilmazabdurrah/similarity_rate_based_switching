@@ -1,0 +1,28 @@
+- zone_id: 0
+
+  zone_center_x: 0.0
+
+  zone_center_y: 0.0
+
+  zone_radius: 3.0
+
+ 
+
+- zone_id: 1
+
+  zone_center_x: 5.0
+
+  zone_center_y: 0.0
+
+  zone_radius: 3.0
+
+ 
+
+- zone_id: 2
+
+  zone_center_x: 0.0
+
+  zone_center_y: 5.0
+
+  zone_radius: 3.0
+

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- SA-MCL Localization-->
+  <node pkg="amcl_kidnapping" type="amcl_kidnapping" name="amcl_kidnapping" output="screen" respawn="true">
+    <remap from="scan" to="/laser_all"/>
+    <remap from="odom" to="/odom"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="odom_model_type" value="diff-corrected"/>
+    <param name="base_frame_id" value="base_link"/>
+    <param name="global_frame_id" value="map"/>
+    <param name="transform_tolerance" value="0.1" />
+    <param name="gui_publish_rate" value="10.0"/>
+    <param name="save_pose_rate" value="0.5"/>
+    <param name="laser_max_beams" value="40"/>
+    <param name="laser_min_range" value="0.2"/>
+    <param name="laser_max_range" value="10.0"/>
+    <param name="min_particles" value="500"/>
+    <param name="max_particles" value="5000"/>
+    <param name="kld_err" value="0.01"/>
+    <param name="kld_z" value="0.99"/>
+    <param name="odom_alpha1" value="0.2"/>
+    <param name="odom_alpha2" value="0.2"/>
+    <param name="odom_alpha3" value="0.2"/>
+    <param name="odom_alpha4" value="0.2"/>
+    <param name="odom_alpha5" value="0.15"/>
+    <param name="laser_z_hit" value="0.97"/>
+    <param name="laser_z_short" value="0.1"/>
+    <param name="laser_z_max" value="0.05"/>
+    <param name="laser_z_rand" value="0.03"/>
+    <param name="laser_sigma_hit" value="0.1"/>
+    <param name="laser_lambda_short" value="0.1"/>
+    <param name="laser_model_type" value="likelihood_field"/>
+    <param name="laser_likelihood_max_dist" value="4.0"/>
+    <param name="update_min_d" value="0.04"/>
+    <param name="update_min_a" value="0.08"/>
+    <param name="resample_interval" value="1"/>
+    <param name="transform_tolerance" value="0.1"/>
+    <param name="recovery_alpha_slow" value="0.000"/>
+    <param name="recovery_alpha_fast" value="0.0"/>
+  </node> 
+  <!-- Similar Energy region for global localization of SA-MCL-->
+  <node pkg="amcl_kidnapping" type="SER.py" name="similar energy region" output="screen" respawn="true">
+      <param name="max_range_energy" value="5.0" />
+      <param name="window_length_energy" value="5"/>
+      <param name="ser_deviation_radius" value="3"/>
+  </node>
+  <!-- Energy map publisher for SA-MCL-->
+  <remap from="map" to="map_energy" />
+  <remap from="static_map" to="static_map_energy" />
+  <node name="map_energy" pkg="map_server" type="map_server" args=" $(find amcl_kidnapping)/maps/energymap.yaml" respawn="true" output="screen">
+	<param name="frame_id" value="map_energy"/>
+  </node>
+  <!-- Environment map publisher for SA-MCL-->
+  <remap from="map" to="map" />
+  <remap from="static_map" to="static_map" />
+  <node name="map_environment" pkg="map_server" type="map_server" args=" $(find amcl_kidnapping)/maps/map.yaml" respawn="true" output="screen"/> 
+  <!-- Static tf publisher between environment map and energy map-->
+  <node pkg="tf" type="static_transform_publisher" name="map_to_energy_map" args="0 0 0 0 0 0 1 map map_energy 50" />
+  
+</launch>
