@@ -5,7 +5,7 @@ In this repository, a ROS compatible multi-stage localization framework includin
 
 The overall framework can be described as follows:
 
-**!!!Add framework here!!!**
+![](https://github.com/yilmazabdurrah/similarity_rate_based_switching/blob/master/figures/Framework.png?raw=true)
 
 The following ROS compatible SIMULINK blocks and ROS packages are given in this repository:
 
