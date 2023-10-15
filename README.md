@@ -3,6 +3,10 @@ A similarity rate-based switching decision mechanism for docking problem of auto
 
 In this repository, a ROS compatible multi-stage localization framework including delivery and docking stages is proposed. An AMR can be localized using SA-MCL algorithm in the delivery stage and scan matching based localization algorithm in the docking stage. The switching point can be automatically determined using correntropy based decision mechanism. 
 
+The overall framework can be described as follows:
+
+**!!!Add framework here!!!**
+
 The following ROS compatible SIMULINK blocks and ROS packages are given in this repository:
 
 _1) Correntropy based similarity rate estimator_
