@@ -1,13 +1,13 @@
 # similarity_rate_based_switching
-A similarity rate-based switching decision mechanism for docking problem of autonomous mobile robots (AMRs)
+A similarity rate-based switching decision mechanism for the docking problem of autonomous mobile robots (AMRs)
 
-In this repository, a ROS compatible multi-stage localization framework including delivery and docking stages is proposed. An AMR can be localized using SA-MCL algorithm in the delivery stage and scan matching based localization algorithm in the docking stage. The switching point can be automatically determined using correntropy based decision mechanism. 
+In this repository, a ROS-compatible multi-stage localization framework including delivery and docking stages is proposed. An AMR can be localized using the SA-MCL algorithm in the delivery stage and the scan-matching-based localization algorithm in the docking stage. The switching point can be automatically determined using a correntropy-based decision mechanism. 
 
 The overall framework can be described as follows:
 
 ![](https://github.com/yilmazabdurrah/similarity_rate_based_switching/blob/master/figures/Framework.png?raw=true)
 
-The following ROS compatible SIMULINK blocks and ROS packages are given in this repository:
+The following ROS-compatible SIMULINK blocks and ROS packages are given in this repository:
 
 _1) Correntropy based similarity rate estimator_
 
@@ -27,7 +27,7 @@ _4) Coarse localization for delivery stage_
 
 ![](https://github.com/yilmazabdurrah/similarity_rate_based_switching/blob/master/figures/SA-MCL.png?raw=true)
 
-Please refer to the following manuscript for further details and cite it for academic works
+Please refer to the following [manuscript](https://doi.org/10.1017/S0263574724000602) for further details and cite it for academic works
 
 ```
 @article{yilmaz2024robotica,
